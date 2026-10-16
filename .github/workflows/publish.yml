@@ -1,0 +1,36 @@
+name: Publish Python Package
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install build
+        
+    - name: Build package
+      run: python -m build
+      
+    - name: Publish to GitHub Packages
+      uses: pypa/gh-action-pypi-publish@release/v1
+      with:
+        repository-url: https://maven.pkg.github.com/YOUR_GITHUB_USERNAME/infinity-boundary-framework # (or PyPI standard)
+      env:
+        # GitHub automatically provides GITHUB_TOKEN for package publishing
+        pypi-token: ${{ secrets.GITHUB_TOKEN }}
