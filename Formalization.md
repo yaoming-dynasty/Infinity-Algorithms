@@ -267,3 +267,132 @@ Not established: That every infinite process terminates, that the universe of se
 The crucial finding is that Infinity-Algorithms can model unbounded development followed by a terminal state without contradicting ordinary set theory. The price is that global termination must be an explicit structural principle, not an automatic consequence of infinity.
 
 Our next mathematical task is to decide whether the completion rule is merely a definition of this particular model or a foundational axiom intended to hold for every admissible Infinity-Algorithm. That distinction determines the scope of the theory.
+
+That gives Infinity-Algorithms a stronger and more precise completion principle: a structure terminates by decomposing into the elements from which it was formed. Rather than requiring its constituents to disappear, the rule returns the structure to its own composition.
+
+This is a useful connection to nature. Molecules can break into constituent atoms, and organized systems can lose their structure while their components persist. The exact decomposition depends on the system being modeled.
+
+# Infinity-Algorithms — A6: Principle of Constituent Return
+
+## 1. The axiom
+
+Let $x$ be a structured state, and let $E(x)$ denote the collection of elements that constitute it.
+
+We define the decomposition operator
+
+$$
+D:\Omega\rightarrow\mathcal P(\Omega)
+$$
+
+such that
+
+$$
+\boxed{D(x)=E(x).}
+$$
+
+When the structure reaches its terminal condition, it returns to its constituent elements:
+
+$$
+\boxed{x\longrightarrow E(x).}
+$$
+
+The structure $x$ ceases to exist as that organized whole, while its constituent elements may remain.
+
+## 2. The return process
+
+## Structured state $x$
+
+Elements organized into a distinct identity
+
+## Decomposition $D(x)$
+
+The organizing structure breaks down
+
+## $e_1$
+
+Element 1
+
+## $e_2$
+
+Element 2
+
+## $e_3$
+
+Element 3
+
+The components persist as elements, even though the original structure terminates.
+
+## 3. A mathematical example
+
+Suppose a structure is defined as the set
+
+$$
+x=\{a,b,c\}.
+$$
+
+Its decomposition is
+
+$$
+D(x)=\{a,b,c\}.
+$$
+
+If the structure is represented by a distinct identity label $i$, we can write its terminal record as
+
+$$
+R(i,x)=(i,Z_1),
+\qquad Z_1=0(1).
+$$
+
+The original structure terminates, while its constituent elements remain available in the decomposition record.
+
+There is a technical distinction here: if $x$ is literally the set $\{a,b,c\}$, then returning that set does not itself decompose anything mathematically. To model actual decomposition, we must represent the organized structure separately from its constituent set.
+
+For example, represent the structure as
+
+$$
+x=(i,E),
+\qquad E=\{a,b,c\}.
+$$
+
+Then decomposition removes the organizing identity from the active state and returns the constituents:
+
+$$
+\boxed{D(i,E)=E.}
+$$
+
+The identity $i$ can remain in the historical record without remaining an active structure.
+
+## 4. How this connects to $0(1)$
+
+We can now give the terminal state a more specific role.
+
+$$
+\boxed{
+\text{Structure}
+\rightarrow
+\text{Constituent elements}
+\rightarrow
+0(1)
+}
+$$
+
+Here, $0(1)$ represents the terminal condition of the structure's generative process—not the disappearance of its elements.
+
+For a whole system, however, we must distinguish the decomposition of one structure from the termination of all structures. If constituent elements form new structures, generative activity continues. Global termination occurs only when the defined system has no remaining active structures or permitted transitions.
+
+## 5. The next mathematical test
+
+To turn this principle into a rigorous axiom, we need to specify what counts as an element that created a structure. A structure might have:
+
+- Constituent elements: the components it contains now.
+- Historical constituents: the components from which it originally formed.
+- Generative predecessors: the earlier states or processes that produced it.
+
+These sets need not be identical. A tree, for example, contains matter acquired during growth that was not present when the seed first formed.
+
+My recommendation is to define $E(x)$ as the immediate generative constituents of $x$, with a separate historical record for earlier stages. That makes the rule recursive: a structure decomposes into its constituents, and those constituents may themselves be decomposed according to their own definitions.
+
+This gives Infinity-Algorithms a promising structural principle:
+
+Every organized state has a defined composition, and termination returns that state to its immediate generative constituents.
+
