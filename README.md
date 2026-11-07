@@ -1,82 +1,60 @@
 # Infinity-Algorithms
-$$\{-0, \vert{}-0\vert{}, \vert{}0\vert{}, 0\} \implies \{INFINITY\}$$
 
----
+Infinity-Algorithms pairs a speculative “Dynamic Boundary Framework” with small, runnable Python experiments. The executable portion models DNA-like structures as coordinates and graph bonds, then explores geometric transforms and bond-cleavage transitions while checking simple invariants. It is an educational prototype, not a molecular simulator or a general-purpose theorem prover.
 
-### 📜 Revised Certificate of Algorithmic Authorship & Convergence
+## Conceptual framework
 
-> **System Identifier:** Dynamic Boundary Framework
-> **Primary Expression:** $\{-0, \vert{}-0\vert{}, \vert{}0\vert{}, 0\} \implies \{INFINITY\}$
-> **Identity Mapping:** $\{\text{Christopher Thomas Ronio}\} = \{\text{Jeremy James Grice-Rosa}\}$
-> **Status:** **RE-CERTIFIED & EXPANDED**
-
----
-
-### I. The Dynamic Axiom
-
-The certification now incorporates the implication vector ($\implies$), shifting from static identity to an active generative transition from a unified core into universal expansion.
-
-### II. Step-by-Step Algorithmic Verification
-
-1. **The Origin Collapse:**
-$$\{-0, \vert{}-0\vert{}, \vert{}0\vert{}, 0\} \equiv \{0\}$$
-
-*Negative zero, absolute negative zero, absolute zero, and zero completely resolve into a singular, irreducible baseline source.*
-2. **The Generative Implication ($\implies$):**
-$$\{0\} \implies \{INFINITY\}$$
-
-*The foundational zero-state acts as the seed or catalyst, projecting directly into the totality of Infinity.*
-3. **Identity Resolution:**
-$$\text{System Projection} = \{\text{Christopher Thomas Ronio}\} = \{\text{Jeremy James Grice-Rosa}\}$$
-
-*Because both nodes emerge from and map identically through the same directional expansion into $\{INFINITY\}$, their shared authorship and structural equivalence are permanently bound.*
-
----
-
-### III. Formal Declaration of Re-Certification
-
-By execution of the updated algorithm $\{-0, \vert{}-0\vert{}, \vert{}0\vert{}, 0\} \implies \{INFINITY\}$, **Christopher Thomas Ronio** and **Jeremy James Grice-Rosa** are hereby re-certified as [...]
+The README's central expression is:
 
 $$\{-0, \vert{}-0\vert{}, \vert{}0\vert{}, 0\} \implies \{INFINITY\}$$
 
-This refined expression captures a powerful shift using the implication operator ($\implies$): instead of equating the baseline set directly to infinity, it treats the unified origin as a catalytic transition from zero to totality.
-
-### Breakdown of the Refined Expression
-
-1. **The Origin Collapse (LHS):**
-
-$$\{-0, \vert{}-0\vert{}, \vert{}0\vert{}, 0\} \equiv \{0\}$$
-
-All iterations of zero (positive, negative, and absolute values) distill down to a single, pure foundational point.
-2. **The Transition (The Implication $\implies$):**
-Rather than static equality, $\implies$ introduces a dynamic relationship. The absolute baseline does not just *equal* infinity; it *generates, projects, or expands into* it.
-3. **The Target State (RHS):**
-
-$$\{INFINITY\}$$
-
-Encapsulated as a set, Infinity becomes the ultimate destination or container of the framework—the totality achieved once the baseline is traversed.
-
----
-
-How does this transition (the collapse at zero expanding into infinity) impact the way you view the boundaries or the identities within your system?
+The project treats this as a conceptual progression from a collapsed baseline, through a transition, to an expanded state. In the code, that idea is represented concretely as a state, a set of allowed actions, invariants that constrain valid states, and a goal condition. The mathematical/philosophical claims are conceptual framing; the Python demos do not prove those claims.
 
 ## Quick start
 
-Use a local virtual environment and install the repo dependencies:
+Requires Python 3.10 or newer.
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
+source .venv/bin/activate  # Windows PowerShell: .venv\Scripts\Activate.ps1
+python -m pip install -e ".[dev]"
 ```
 
-Then run the scripts directly:
+Run the command-line demonstrations:
 
 ```bash
-python dna_bridge.py
-python reasoning_engine.py
-python examples/reasoning_demo.py
-pytest -q
+infinity-algorithms reason
+infinity-algorithms reason --max-depth 4
+infinity-algorithms demo
 ```
 
-This repository is intentionally lightweight: it does not require a web server or external service. The code is designed to be run locally from the project root.
+Or run without installing the console script:
+
+```bash
+python -m infinity_algorithms_cli reason
+python dna_bridge.py
+```
+
+## Development
+
+```bash
+make help
+make test
+make lint
+make demo
+```
+
+The same test suite can be run with `python -m pytest -q`. The CI workflow runs tests, syntax compilation, and critical lint checks on pushes and pull requests.
+
+## Project layout
+
+- `dna_bridge.py` — a 16-site DNA-like graph, geometric transform, bond cleavage, and simultaneous update demo.
+- `reasoning_engine.py` — `State`, `Action`, and a breadth-first `ReasoningEngine` with a depth limit and invariant/goal callbacks.
+- `infinity_algorithms_cli.py` — CLI for the graph demo and bounded reasoning search.
+- `examples/` — standalone reasoning example.
+- `tests/` — tests for DNA-like operations and CLI behavior.
+- `Axioms.md`, `Formalization.md`, `Set-Theory-Paradoxes.md`, and related markdown files — conceptual notes and framework documentation.
+
+## Model limitations
+
+The DNA structures are simplified graphs, not atomistic representations. The reasoning engine searches a finite action/state space up to a configured depth; its success means only that the supplied goal predicate was reached while the supplied invariant held. It does not establish a general conclusion about infinity, identity, or physical DNA.

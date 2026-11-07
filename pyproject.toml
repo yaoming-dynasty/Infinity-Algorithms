@@ -15,10 +15,14 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest>=8.0",
+    "flake8>=7.0",
 ]
 
+[project.scripts]
+infinity-algorithms = "infinity_algorithms_cli:main"
+
 [tool.setuptools]
-py-modules = ["dna_bridge", "reasoning_engine", "reasoning_engine_demo"]
+py-modules = ["dna_bridge", "reasoning_engine", "reasoning_engine_demo", "infinity_algorithms_cli"]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
